@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' ,sans-serif;
+}
+
+nav {
+    background-color: black;
+    position: fixed;
+    width: 100%; /* Ensures the navbar spans the entire width of the viewport */
+    top: 0; /* Fix the navbar to the top of the viewport */
+    z-index: 1000; /* Ensure the navbar appears above other content */
+}
+
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    color: rgb(44, 177, 44);
+    font-size: 20px;
+    height: 100%;
+    padding:0 30px ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: all 0.5s ease-in-out; /* Adjust timing and easing function as needed */
+}
+
+nav a:hover,
+nav a.active,
+nav a.active.hideOnMobile{
+    background-color: rgba(128, 128, 128, 0.938);
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.808);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+}
+
+.svg-path {
+    fill: rgb(44, 177, 44); /* Change the fill color of the path */
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    background: black;
+}
+
+.about-me {
+    width: 80%; /* Adjust width as needed */
+    padding: 20px; /* Add padding for better readability */
+    margin-left: 50px; /* Adjust left margin to create space between the section and about-me container */
+    padding-left: 20px; /* Add padding to move content slightly to the right */
+    text-align: left; /* Align text to the left */
+}
+
+section .about-me h1 {
+    font-size: 50px;
+}
+
+section .about-me .green-text {
+    color: rgb(8, 235, 8);
+}
+
+section .about-me h1 {
+    font-size: 50px;
+}
+
+#about .about-me .contact-buttons {
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 10px;
+    transition: transform 0.3s ease
+} 
+
+#about .about-me .contact-buttons:hover {
+    transform: scale(1.2); 
+}
+
+
+#about .about-me .download-resume-btn {
+    color: white;
+    background-color: rgb(5, 197, 5);
+    margin-right: 20px;
+    height: 60px;
+    width: 240px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#about .about-me .download-resume-btn:hover {
+    color: rgb(5, 197, 5);
+    background: transparent;
+    border-color: rgb(5, 197, 5);
+}
+
+#about .about-me .contact-me-btn {
+    background: transparent;
+    height: 60px;
+    width: 240px;
+    border-color: rgb(5, 197, 5);
+    border-radius: 10px;
+}
+
+#about .about-me .contact-me-btn {
+    color: rgb(5, 197, 5);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#about .about-me .contact-me-btn:hover {
+    color: white;
+    background-color: rgb(5, 197, 5);
+}
+
+
+
+section .about-me-img img {
+    display: block;
+    width: 70%; /* Set the width to 50% of its parent container */
+    height: auto; /* Maintain the aspect ratio */
+    border: none; /* Remove any border */
+    border-radius: 50%; /* Makes the border circular */
+    box-shadow: 0 0 20px 5px rgb(44, 177, 44); /* Initial box-shadow with green glow */
+    animation: glowing 2s infinite alternate; /* Apply a glowing animation */
+}
+
+#about .about-me-img {
+    text-align: center;
+}
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 10px 0 rgb(44, 177, 44); /* Start with smaller green box-shadow */
+    }
+    to {
+        box-shadow: 0 0 20px 5px rgba(3, 240, 3, 0.966); /* Transition to larger green box-shadow */
+    }
+}
+
+@media(max-width: 800px){
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column; /* Change to column-reverse to move the image above */
+        align-items: center; /* Align items to center */
+    }
+
+    #about .about-me-img {
+        order: -1; /* Move the image above the text */
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+    }
+
+    #about .about-me-img img {
+        width: 50%; /* Set the width to 50% of its parent container */
+        height: auto;
+    }
+
+    #about .about-me .download-resume-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #about .about-me .contact-me-btn  {
+        width: 100%;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* Styling of the projects section starts from here */
+#projects .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+#projects .projects-container .single-project-container {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    margin-right: 20px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    height: auto; /* Set height to auto to allow content to dictate height */
+    flex-direction: column; /* Stack children vertically */
+    transition: box-shadow 0.3s ease;
+}
+
+#projects .projects-container .single-project-container:hover {
+    box-shadow: 0 0 20px 5px rgb(44, 177, 44);
+}
+
+#projects .projects-container .single-project-container .text-container {
+    flex: 1; /* Let it take remaining space */
+    margin-top: 20px;
+}
+
+#projects .projects-container .single-project-container .text-container p {
+    width: 100%;
+}
+#projects .projects-container .single-project-container .image-container {
+    margin-top: 20px;
+    flex: 1; /* Let it take remaining space */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+#projects .projects-container .single-project-container .image-container img {
+    height: 600px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#projects .projects-container .single-project-container .links img {
+    height: 50px;
+    width:  100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#projects .projects-container .single-project-container .links .telegram {
+    margin-left: 30px;
+    border-radius: 50%;
+    width: auto;
+}
+
+#projects .projects-container .single-project-container .links .github {
+    border-radius: 3px;
+    border-radius: 50%;
+    width: auto;
+}
+
+#projects .projects-container .single-project-container .links img:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    box-shadow: 0 0 5px 5px rgb(47, 233, 47);
+}
+
+#projects .projects-container .single-project-container .tools .tools-bar {
+    list-style-type: none;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    height: 25px;
+    width: auto;
+    display: inline-block;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: black;
+}
+
+@media(max-width: 800px) {
+    #projects .projects-container .single-project-container {
+        width: 100%;
+        margin-left: 10px;
+    }
+}
+
+/* Styling for the skills section starts here */
+#skills {
+    display: flex;
+    justify-content: center; /* Center the skills container horizontally */
+    align-items: flex-start;
+    padding-top: 100px;
+}
+
+#skills ul {
+    list-style: none;
+}
+
+#skills .skills-container {
+    width: 70%; /* Set the width of the skills container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skills .skills-container h2{
+    font-size: 50px;
+}
+
+#skills .skills-container hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(44, 177, 44);
+}
+
+#skills .skills-container .technical-skills {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to the next line */
+    justify-content: center; /* Center items horizontally */
+}
+
+#skills .technical-skills .technical-skills-bar {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(170, 168, 168, 0.973);
+    margin-top: 10px;
+    margin: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 10px; /* Adjust padding as needed */
+    font-size: 20px;
+    text-align: center; /* Center text horizontally */
+    animation: moveright 1.5s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes moveright {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move up to its original position */
+    }
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(1){
+    animation-delay: 0s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(2){
+    animation-delay: 0.10s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(3){
+    animation-delay: 0.20s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(4){
+    animation-delay: 0.30s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(5){
+    animation-delay: 0.40s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(6){
+    animation-delay: 0.50s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(7){
+    animation-delay: 1.30s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(8){
+    animation-delay: 1.40s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(9){
+    animation-delay: 1.50s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(10){
+    animation-delay: 1.60s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(11){
+    animation-delay: 1.70s;
+}
+#skills .technical-skills .technical-skills-bar:nth-child(12){
+    animation-delay: 1.80s;
+}
+#skills .technical-skills .technical-skills-bar:nth-child(13){
+    animation-delay: 2.50s;
+}
+
+#skills .technical-skills .technical-skills-bar:nth-child(14){
+    animation-delay: 2.60s;
+}
+
+#skills .technical-skills .technical-skills-bar:hover {
+    box-shadow: 0 0 10px 1px rgb(4, 255, 4);;
+}
+
+#skills .technical-skills .technical-skills-bar img {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 10px; /* Add space between the image and the text */
+}
+
+/* Styling for the experience section starts here*/
+#experience .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+#experience .timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background:rgb(44, 177, 44);;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 1;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+    0% {
+        height: 0;
+    }
+    100%{
+        height: 100%
+    }
+}
+
+#experience .timeline .container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+        z-index: 3;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        z-index: 3;
+    }
+}
+
+#experience .timeline .container img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    right: -25px;
+    top: 32px;
+    z-index: 3;
+}
+
+#experience .timeline .container:nth-child(1){
+    animation-delay: 0s;
+}
+
+#experience .timeline .container:nth-child(2){
+    animation-delay: 1s;
+}
+
+#experience .timeline .container:nth-child(3){
+    animation-delay: 2s;
+}
+
+#experience .timeline .container .text-box {
+    padding: 20px 30px;
+    color: black;
+    background: whitesmoke;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+#experience .timeline .container .text-box h2 {
+    font-weight: 600;
+}
+
+#experience .timeline .container .text-box small {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#experience .timeline .left-container {
+    left: 0;
+}
+
+#experience .timeline .right-container {
+    left: 50%;
+}
+
+#experience .timeline .right-container img {
+    left: -25px;
+}
+
+#experience .timeline .left-container .left-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid whitesmoke;
+    right: -15px;
+}
+
+#experience .timeline .right-container .right-container-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid whitesmoke;
+    left: -15px;
+}
+
+@media screen and (max-width: 600px){
+    
+    #experience .timeline {
+        margin: 50px auto;
+    }
+
+    #experience .timeline::after{
+        left: 31px;
+    }
+
+    #experience .timeline .container{
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+
+    #experience .timeline .container .text-box {
+        font-size: 13px;
+    }
+
+    #experience .timeline .container .text-box small {
+        margin-bottom: 10px;
+    }
+
+    #experience .timeline .right-container {
+        left:0
+    }
+
+    #experience .timeline .left-container img, #experience .timeline .right-container img {
+        left: 10px;
+    }
+
+    #experience .timeline .left-container .left-container-arrow , #experience .timeline .right-container .right-container-arrow {
+        border-right: 15px solid white;
+        border-left: 0;
+        left: -15px;
+    }
+}
+
+
+/* Styling for the contact section starts here*/
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+}
+
+.contact-container-left h1 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 50px;
+}
+
+.contact-container-left hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(44, 177, 44);
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: black;
+    border-radius: 50px;
+}
+
+.contact-container textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+
+}
+
+.contact-inputs:focus {
+    border: 2.5px solid rgb(44, 177, 44);
+}
+
+.contact-inputs::placeholder {
+    color: grey;
+}
+
+.contact-container button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: black;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(3, 240, 3);
+    cursor: pointer;
+}
+
+section:nth-child(odd) {
+    background: grey;
+}
